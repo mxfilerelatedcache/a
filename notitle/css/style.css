@@ -1,0 +1,46 @@
+
+
+
+
+body{
+	background-color: black;
+	font-family: 'Inter', sans-serif;
+	font-family: 'PT Mono', monospace;
+}
+
+.headline {
+	font-family: 'Inter', sans-serif;
+	font-size: 20vw;
+	color: white;
+}
+
+.headline2 {
+	margin-top: 100px;
+	font-family: 'Inter', sans-serif;
+	font-size: 20vw;
+	color: white;
+	text-align: right;
+}
+
+
+.headline3 {
+	font-family: 'Inter', sans-serif;
+	font-size: 20vw;
+	color: pink;
+	text-align: center;
+}
+
+.text {
+	font-family: 'PT Mono', monospace;
+	color:white;
+	text-align: left;
+	margin-right: 10%;
+	margin-left: 10%;
+	font-size:5vw;
+}
+
+.img {
+	width:20em;
+}
+
+
