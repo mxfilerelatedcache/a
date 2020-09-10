@@ -39,6 +39,16 @@ body{
 	font-size:5vw;
 }
 
+.text2 {
+	font-family: 'PT Mono', monospace;
+	color:lightpink;
+	text-align: right;
+	margin-right: 10%;
+	margin-left: 10%;
+	font-size:5vw;
+    margin-bottom: 10em;
+}
+
 .playbutton {
 	color:white;
 	font-family: 'Inter', sans-serif;
@@ -47,8 +57,21 @@ body{
 }
 
 #iframe {
-  visibility: hidden;
+    margin-right: inherit;
+    margin-left: inherit;
+    margin-top: -20em;
 }
 
+#wrapper {
+    margin-right: 10%;
+    margin-left: 10%;
+}
 
+a {
+  color: skyblue;
+}
+
+a:visited {
+  color: skyblue;  
+}
 
