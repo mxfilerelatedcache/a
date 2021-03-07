@@ -1,0 +1,73 @@
+
+
+@font-face {
+    font-family: canela;
+    src: url(../fonts/Canela-Regular.otf) 
+}
+
+@font-face {
+    font-family: druk;
+    src: url(../fonts/DrukWideMedium.otf) 
+}
+
+
+.art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 50%;
+    height:100%;
+    font-family:druk;
+    color: black;
+    font-size: 15vw;
+    display: flex;
+   justify-content: flex-end;
+    align-items:center;
+}
+
+.art:hover{
+   background-color: black;
+    color:white;
+    
+}
+
+@keyframes moving {
+    from {transform: translateY(0px);}
+    to {transform: translateY(200px);}
+}
+#artcontent{
+    margin: 0.1em;
+   flex: 0 0 200px;
+}
+#artcontent2{
+    margin: 0.1em;
+   flex: 0 0 200px;
+    -webkit-animation: moving 5s ;
+    animation: moving 5s ;
+}
+#sciencecontent{
+    margin: 0.1em;
+ flex: 0 0 200px;
+}
+
+.science {    
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 50%;
+    height:100%;
+    font-family:canela;
+    color: black;
+    font-size: 14vw;
+    text-align: left;
+     display: flex;
+   justify-content: flex-start;
+    align-items:center;
+}
+
+.science:hover{
+     background-color: black;
+    color: white;
+}
