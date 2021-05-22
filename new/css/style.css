@@ -26,31 +26,6 @@
     align-items:center;
 }
 
-.art:hover{
-   background-color: black;
-    color:white;
-    
-}
-
-@keyframes moving {
-    from {transform: translateY(0px);}
-    to {transform: translateY(200px);}
-}
-#artcontent{
-    margin: 0.1em;
-   flex: 0 0 200px;
-}
-#artcontent2{
-    margin: 0.1em;
-   flex: 0 0 200px;
-    -webkit-animation: moving 5s ;
-    animation: moving 5s ;
-}
-#sciencecontent{
-    margin: 0.1em;
- flex: 0 0 200px;
-}
-
 .science {    
     position: absolute;
     top: 0;
@@ -67,7 +42,108 @@
     align-items:center;
 }
 
+.art:hover{
+   background-color: black;
+    color:white;
+    
+}
+
+@keyframes moving {
+    from {transform: translateY(0px);}
+    to {transform: translateY(200px);}
+}
+#artcontent{
+    margin: 0.1em;
+   flex: 0 0 200px;
+}
+#artcontent2{
+    height: 35%;
+    margin: 0.1em;
+   flex: 0 0 200px;
+}
+#sciencecontent{
+    margin: 0.1em;
+ flex: 0 0 200px;
+}
+
+#sciencecontent2{
+    margin: 0.1em;
+    height: 35%;
+ flex: 0 0 200px;
+}
+
+#text{
+    color: white;
+    font-size: 1vw;
+}
+
+
+.science2{    
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    width: 50%;
+    height:100%;
+    font-family:canela;
+    color: white;
+    font-size: 14vw;
+    text-align: left;
+     display: flex;
+   justify-content: flex-start;
+    align-items:top;
+}
+
+.art2 {    
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 50%;
+    height:100%;
+    font-family:druk;
+    color: white;
+    font-size: 14vw;
+    text-align: left;
+    display: flex;
+   justify-content: flex-end;
+    align-items:flex-end;
+}
+
 .science:hover{
      background-color: black;
     color: white;
+}
+
+#fader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    pointer-events: none;
+    background: black;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-out {
+    from { opacity: 1 }
+      to { opacity: 0 }
+}
+
+@keyframes fade-in {
+    from { opacity: 0 }
+      to { opacity: 1 }
+}
+
+#fader.fade-out {
+    opacity: 0;
+    animation-name: fade-out;
+}
+
+#fader.fade-in {
+    opacity: 1;
+    animation-name: fade-in;
 }

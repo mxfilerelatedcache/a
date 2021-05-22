@@ -1,40 +1,22 @@
 <!DOCTYPE html>
-
-<title>Simon Krukowski</title>
+<html lang="en" >
 <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>SIMON KRUKOWSKI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-<div id="container">
-	<div id="text"></div><div id="cursor"></div>    
+
+<!-- partial:index.partial.html -->
+<div class="wrap">
+  <h1 class="vhs" data-text="SIMON KRUKOWSKI">SIMON KRUKOWSKI</h1>
+
 </div>
-    
-    <span class="center"><div onmouseover="document.body.style.backgroundColor='#4a00ff';" onmouseout="document.body.style.backgroundColor='#ff005f';" ><h3>Bewege die Maus.</h3>
-    </div></span>
+ <canvas class="js--canvas"></canvas>
+<!-- partial -->
+ <script  src="./script.js"></script>
+   
 </body>
-<script src="js/script.js" async></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-$(document).mousemove(function (e) {
-
-  var $width = ($(document).width()) / 255;
-  var $height = ($(document).height()) / 255;
-  var $pageX = parseInt(e.pageX / $width, 10);
-  var $pageY = parseInt(e.pageY / $height, 10);
-
-  // rgba($a-$b-$c);
-  var $a = $pageX,
-      $b = ($pageY - 255) * (-1),
-      $c = 0;
-
-  // if cursor is in bottom left, adjust $c accordingly
-  if ($pageX <= $pageY) {
-      $c = $pageY - $pageX;
-  }
-
-  // change element to whatever you need to target
-  $('body').css('background-color', 'rgb('+$a+','+$b+','+$c+')');
-
-});</script>
+</html>

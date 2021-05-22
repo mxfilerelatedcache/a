@@ -1,0 +1,131 @@
+
+@font-face {
+  font-family: "Druk Wide Bold"; 
+  src: url("https://db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.ttf"); 
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+* {
+  cursor: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Druk Wide Bold"; 
+}
+
+.vhs {
+  text-transform: uppercase;
+  position: relative;
+  mix-blend-mode: screen;
+  color: transparent;
+  text-shadow: 0 0 0.125rem #0f0;
+  -webkit-animation: jitter 5s infinite;
+          animation: jitter 5s infinite;
+}
+.vhs::before,
+.vhs::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  mix-blend-mode: screen;
+  -webkit-animation: glitch 5s infinite alternate;
+          animation: glitch 5s infinite alternate;
+}
+.vhs::before {
+  text-shadow: 0 0 0.150rem #f00;
+}
+.vhs::after {
+  text-shadow: 0 0 0.150rem #00f;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@-webkit-keyframes glitch {
+  0% {
+    transform: rotate(0deg) translate(0.11rem) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(0.11rem) rotate(-360deg);
+  }
+}
+@keyframes glitch {
+  0% {
+    transform: rotate(0deg) translate(0.11rem) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(0.11rem) rotate(-360deg);
+  }
+}
+@-webkit-keyframes jitter {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  50.1% {
+    transform: translateX(0.1em) skew(40deg);
+  }
+  50.2% {
+    transform: translateX(-0.2em) skew(-40deg);
+  }
+  50.3% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes jitter {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  50.1% {
+    transform: translateX(0.1em) skew(40deg);
+  }
+  50.2% {
+    transform: translateX(-0.2em) skew(-40deg);
+  }
+  50.3% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
