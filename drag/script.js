@@ -47,8 +47,6 @@ function dragMoveListener (event) {
 // this function is used later in the resizing and gesture demos
 window.dragMoveListener = dragMoveListener
 
-function preventBehavior(e) {
-  e.preventDefault(); 
-};
-
-document.addEventListener("touchmove", preventBehavior, {passive: false});
+document.addEventListener('touchmove', function(e) {
+  e.preventDefault();
+}, { passive: false });
