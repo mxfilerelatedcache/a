@@ -3,6 +3,11 @@
     background-color: #2D2D2D;
   }
 
+  #wrapper{
+      width:50%;
+      clear:both;
+  }
+
   .square_r {
     width:calc(10vh/0.707);
     height:calc(10vh/0.707);
@@ -11,6 +16,7 @@
     touch-action: none;
     user-select: none;
     transform: rotate(45deg);
+    float: left;
   }
 
 .triangle1 {
@@ -22,6 +28,7 @@
     border-left: 20vh solid #B97A95;
     touch-action: none;
     user-select: none;
+    float: left;
   }
 
   .triangle2 {
@@ -32,6 +39,7 @@
     border-bottom: 10vh solid #F6AE99;
     touch-action: none;
     user-select: none;
+    float: left;
   }
   
   .triangle3 {
@@ -42,6 +50,7 @@
     border-right: 10vh solid #DEBA9D;
     touch-action: none;
     user-select: none;
+    float: left;
   }
 
   .triangle4 {
@@ -52,6 +61,7 @@
     border-top: 20vh solid #9E7777;
     touch-action: none;
     user-select: none;
+    float: left;
   }
 
   .triangle5 {
@@ -61,6 +71,7 @@
     border-left: 20vh solid transparent;
     touch-action: none;
     user-select: none;
+    float: left;
   }
 
   .parallelogram {
@@ -70,6 +81,7 @@
     transform: skewY(-45deg);
     touch-action: none;
     user-select: none;
+    float: left;
   }
 
   .whitesquare {
