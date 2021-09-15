@@ -1,0 +1,132 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(#303030,#171717);
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    position: absolute;
+    margin: auto;
+    width: 80%;
+    height: 80%;    
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;  
+    z-index: 2;
+}
+
+
+
+.content {
+    position: absolute;
+    margin: auto;
+    width: 90%;
+    height: 80%; 
+    left: 0;
+    right: 0;
+    display:flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: 5vw 5vw;
+}
+
+.title {
+    color: #171717;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12pt;
+    margin: 4vh;
+}
+
+.item   {
+    width:12vw;
+    height: 12vw;
+    background-color: rgba(53, 53, 53, 0.25);
+    border-radius: 25px;
+    transition: all 1s;
+}
+
+.sub {
+    display: none;
+    text-align: center;
+    transform: translateY(12.5vw);
+    font-family: 'Roboto Mono', monospace;
+    color: rgba(53, 53, 53, 0.993);
+}
+
+.item:hover {
+    transform: scale(1.1);
+}
+
+.item:hover > .sub {
+    display: block;
+}
+
+.container_background  {
+    position: absolute;
+    margin: auto;
+    width: 70%;
+    height: 70%;    
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    border-radius: 30px;  
+    z-index: 1;
+}
+.circle{
+    display: inline-block;
+    position: absolute;
+    background-color: red;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+    animation-name: movement;
+    animation-duration: 30s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.circle2{
+    display: inline-block;
+    position: absolute;
+    background-color: rgba(16, 108, 247, 0.548);
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+    animation-name: movement2;
+    animation-duration: 30s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes movement {
+    0% {transform: translateY(0%) scale(1)}
+    50% {transform: translateY(100%) translateX(50%) scale(2);}
+    100% {transform: translateY(0%) scale(1);}
+  }
+
+  @keyframes movement2 {
+    0% {transform: translateY(20%) translateX(50%) scale(1)}
+    50% {transform: translateY(50%) translateX(100%) scale(2);}
+    100% {transform: translateY(20%) translateX(50%) scale(1);}
+  }
+
+
