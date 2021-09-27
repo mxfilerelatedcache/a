@@ -1,0 +1,69 @@
+---
+title: "R Notebook"
+output:
+  html_document: 
+    toc: yes
+    theme: cerulean
+    code_folding: hide
+---
+# Analyse Pro-Kontra Liste
+
+Im Folgenden ist die versprochene Analyse der übersandten Pro-Kontraliste zu finden.
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+data <- read.csv("/Users/simonkrukowski/Downloads/vornachteile.csv",sep = ";")
+
+library(ggplot2)
+library(dplyr)
+library(wesanderson)
+
+library(tm)
+library(SnowballC)
+library(wordcloud)
+library(RColorBrewer)
+library(RCurl)
+library(XML)
+
+source('http://www.sthda.com/upload/rquery_wordcloud.r')
+```
+
+
+Zunächst werfen wir einen Blick auf die Gesamtheit der gelieferten Argumente. Dazu bietet sich eine Wordcloud an.
+```{r}
+rquery.wordcloud(paste(unlist(data$Aussage), collapse =" "),type = "text",lang="german", excludeWords = NULL, 
+        textStemming = FALSE,  colorPalette="Dark2",
+        max.words=200,min.freq = 1)
+```
+
+So schön, so gut. Besonders interessant sind allerdings konkrete Zahlen.
+
+```{r}
+data %>% 
+  group_by(Person,Gut) %>% 
+  rename(Argument = Gut) %>% 
+  count(Argument)
+```
+Wie der obigen Tabelle zu entnehmen ist, beläuft sich die Anzahl der Pro-Argumente bei Simon auf 5, bei Lisa dagegen nur auf 3. Mit Blick auf die Kontraargumente sieht es allerdings relativ gleichauf aus.
+
+Betrachten wir nun die Anzahl der Zeichen genauer.
+```{r}
+data %>% 
+  group_by(Person,Gut) %>% 
+  summarise(amount = nchar(Gut)) %>% 
+  summarise(anzahl_zeichen = sum(amount))
+```
+
+Es teugt sich ein ähnliches Bild, nach welchem die Pro Argumente ganz klar bei Simon überwiegen.
+
+Um das Ganze zu veranschaulichen, bietet sich ein klassisches Bar-Plot an:
+
+```{r}
+data %>% 
+  group_by(Person,Gut) %>% 
+  summarise(amount = nchar(Gut)) %>% 
+  summarise(anzahl_zeichen = sum(amount)) %>% 
+  filter(Gut=="Pro") %>% 
+  ggplot(.)+geom_bar(aes(x=anzahl_zeichen, y=Person,fill=Person),stat = "identity")+xlab("Anzahl Zeichen der Pro-Argumente")+scale_fill_manual(values = wes_palette("Darjeeling1"))+theme_classic()
+```
+
+Abschließend lässt sich also sagen, dass die Entscheidung für Mittwoch klar ist: Wenngleich die es auf beiden Seiten gleich viele Negativargumente gibt, so überwiegen die Positivargumente für ein Abhängen bei Simon.
