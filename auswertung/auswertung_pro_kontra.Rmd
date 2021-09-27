@@ -29,7 +29,7 @@ source('http://www.sthda.com/upload/rquery_wordcloud.r')
 
 
 Zunächst werfen wir einen Blick auf die Gesamtheit der gelieferten Argumente. Dazu bietet sich eine Wordcloud an.
-```{r}
+```{r message=FALSE, warning=FALSE}
 rquery.wordcloud(paste(unlist(data$Aussage), collapse =" "),type = "text",lang="german", excludeWords = NULL, 
         textStemming = FALSE,  colorPalette="Dark2",
         max.words=200,min.freq = 1)
@@ -37,7 +37,7 @@ rquery.wordcloud(paste(unlist(data$Aussage), collapse =" "),type = "text",lang="
 
 So schön, so gut. Besonders interessant sind allerdings konkrete Zahlen.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 data %>% 
   group_by(Person,Gut) %>% 
   rename(Argument = Gut) %>% 
@@ -46,7 +46,7 @@ data %>%
 Wie der obigen Tabelle zu entnehmen ist, beläuft sich die Anzahl der Pro-Argumente bei Simon auf 5, bei Lisa dagegen nur auf 3. Mit Blick auf die Kontraargumente sieht es allerdings relativ gleichauf aus.
 
 Betrachten wir nun die Anzahl der Zeichen genauer.
-```{r}
+```{r message=FALSE, warning=FALSE}
 data %>% 
   group_by(Person,Gut) %>% 
   summarise(amount = nchar(Gut)) %>% 
@@ -57,7 +57,7 @@ Es teugt sich ein ähnliches Bild, nach welchem die Pro Argumente ganz klar bei 
 
 Um das Ganze zu veranschaulichen, bietet sich ein klassisches Bar-Plot an:
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 data %>% 
   group_by(Person,Gut) %>% 
   summarise(amount = nchar(Gut)) %>% 
